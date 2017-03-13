@@ -41,6 +41,6 @@ def EX_status():
 	return render_template('EX_status.html',display_status=output)
 
 if __name__ == '__main__':
-	app.run(debug=True)
+	app.run(host='0.0.0.0',port=5000,debug=True)
 	
 
