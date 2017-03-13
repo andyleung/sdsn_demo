@@ -1,0 +1,20 @@
+simple program to test the following:
+
+1. flask-bootstrap
+2. Display OS command output on web
+
+import subprocess
+output = subprocess.check_output("cat /etc/services", shell=True)
+
+or
+import commands
+status, output = commands.getstatusoutput("cat /etc/services")
+status is 0, output is the contents of /etc/services.
+
+See here:
+http://stackoverflow.com/questions/3503879/assign-output-of-os-system-to-a-variable-and-prevent-it-from-being-displayed-on
+
+Flask-bootstrap
+See here:
+https://youtu.be/PE9ZGniSDW8
+

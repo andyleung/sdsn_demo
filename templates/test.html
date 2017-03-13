@@ -1,0 +1,35 @@
+{% extends "bootstrap/base.html" %}
+
+
+{% block content %}
+<div class="container">
+<div class="row">
+<h1>OS command list</h1>
+<div class="col-lg-4">
+<p> <b>date</b> output: </p>
+{{ display_date }}
+</div>
+
+<div class="col-lg-4">
+<p> <b>uptime</b> output: </p>
+{{ display_uptime }}
+<p><a class="btn btn-primary" href="#" role="button">View details &raquo</a></p>
+
+<button onclick="myFunction()">Date</button>
+<p id="demo"></p>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+<script> $(myFunction(){
+    document.getElementById("demo").innerHTML = "Hello World";
+});
+</script>
+
+</div>
+</div>
+</div>
+{% endblock %}
+
+
+
+

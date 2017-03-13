@@ -1,0 +1,70 @@
+{% extends "bootstrap/base.html" %}
+
+{% block content %}
+<!-- Fixed navbar -->
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Home</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#">About</a></li>
+            <li><a href="#about">Document</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+    <div class="container theme-showcase" role="main">
+
+      <!-- Main jumbotron for a primary marketing message or call to action -->
+      <div class="jumbotron">
+        <h1>Juniper SDSN Demo</h1>
+        <p>Welcome to Juniper APAC Lab SDSN demo. Please refer to <a href="https://youtu.be/yBbl4tKxu3s" target="_blank">this video</a> for the details.</p>
+        <h4>Demo Procedures:</h4>
+        <ul>
+        	<li>Launch Windows Client</li>
+        	<li>Visit C&C sites </li>
+        	<li>Check PE & EX4200A for status and FW filter</li>
+        	<li>Switch to another network</li>
+        	<li>Check again for PE & EX4200B update</li>
+        </ul>
+      </div>
+        <p>
+        <a href="http://www.juniper.net" target="_blank"><button type="button" class="btn btn-primary">Launch Desktop</button></a>
+        <a href={{ url_for('EX_status') }} target="_blank"><button type="button" class="btn btn-warning">Switch Status</button></a>
+        </p> 
+        <div class="page-header">
+        </div>
+        <h4>EX4200-A 192.168.10.x network</h4>
+        <p>
+        <a href={{ url_for('EX4200A_linkup') }} target="_blank"><button type="button" class="btn btn-primary">Link UP</button></a>
+        <a href={{ url_for('EX4200A_linkdown') }} target="_blank"><button type="button" class="btn btn-primary">Link Down</button></a>
+        </p> 
+        <h4>EX4200-B 192.168.11.x network</h4>
+        <p> 
+        <a href={{ url_for('EX4200B_linkup') }} target="_blank"><button type="button" class="btn btn-warning">Link UP</button></a>
+        <a href={{ url_for('EX4200B_linkdown') }} target="_blank"><button type="button" class="btn btn-warning">Link Down</button></a>
+        </p>
+
+      <div class="page-header">
+      <h3>Demo Equipments</h3>
+      </div>
+      <div class="well">
+        <ul>
+        	<li>EX4200 Aggegration Switch x 2</li>
+        	<li>EX4200 Access Switch x 1</li>
+        	<li>SRX345 Firewall with ATP x 1</li>
+        	<li>SDSN Policy Enforcer 16.1</li>
+        	<li>Junos Space 16.1 + Security Director</li>
+        </ul>
+      </div>
+{% endblock %}
