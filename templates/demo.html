@@ -1,6 +1,8 @@
 {% extends "bootstrap/base.html" %}
 
 {% block content %}
+<link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+
 <!-- Fixed navbar -->
     <nav class="navbar navbar-inverse navbar-fixed-top">
       <div class="container">
@@ -15,8 +17,8 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="#">About</a></li>
-            <li><a href="#about">Document</a></li>
+            <li><a href="http://172.27.171.130:8080/topology.pdf" target="_blank">Topology</a></li>
+            <li><a href="https://www.juniper.net/techpubs/en_US/release-independent/policy-enforcer/topics/concept/junos-space-policy-enforcer-settings.html" target="_blank">Document</a></li>
             <li><a href="#contact">Contact</a></li>
           </ul>
         </div><!--/.nav-collapse -->
@@ -39,8 +41,10 @@
         </ul>
       </div>
         <p>
-        <a href="http://www.juniper.net" target="_blank"><button type="button" class="btn btn-primary">Launch Desktop</button></a>
+        <a href="http://172.27.171.130:8080/guacamole" target="_blank"><button type="button" class="btn btn-primary">Launch Desktop</button></a>
         <a href={{ url_for('EX_status') }} target="_blank"><button type="button" class="btn btn-warning">Switch Status</button></a>
+        <a href="https://172.27.170.165/mainui/" target="_blank"><button type="button" class="btn btn-info">Security Director</button></a>
+        <a href="https://euapac.sky.junipersecurity.net" target="_blank"><button type="button" class="btn btn-success">SKY ATP</button></a>
         </p> 
         <div class="page-header">
         </div>
@@ -54,6 +58,9 @@
         <a href={{ url_for('EX4200B_linkup') }} target="_blank"><button type="button" class="btn btn-warning">Link UP</button></a>
         <a href={{ url_for('EX4200B_linkdown') }} target="_blank"><button type="button" class="btn btn-warning">Link Down</button></a>
         </p>
+      <h3>Switch status</h3>
+      <ul id="switches"></ul>
+      
 
       <div class="page-header">
       <h3>Demo Equipments</h3>
@@ -67,4 +74,7 @@
         	<li>Junos Space 16.1 + Security Director</li>
         </ul>
       </div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script> 
+<script src="{{ url_for('static', filename='main.js') }}"> </script>
 {% endblock %}
